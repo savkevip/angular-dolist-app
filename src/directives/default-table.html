@@ -1,17 +1,20 @@
 <div class="row">
   <div class="col-lg-12">
-    <table class="table table-bordered">
+    <table class="table table-bordered table-hover table-condensed">
       <thead>
         <tr>
-          <th class="text-center">Duty and Time</th>
+          <th class="text-center">Duty</th>
+          <th class="text-center">Time</th>
           <th class="text-center">Action</th>
         </tr>
       </thead>
       <tbody>
         <tr ng-repeat="list in vm.lists">
           <td >
-            <span editable-text="list.name" e-name="name" e-form="rowform" onbeforesave="vm.checkName($date)">{{list.name}}</span>
-            <span editable-text="list.time" e-name="name" e-form="rowform">{{list.time | date:"HH:mm"}}</span>
+            <span class="input" editable-text="list.name" e-name="name" e-form="rowform" onbeforesave="vm.checkName($date)">{{list.name}}</span>
+          </td>
+          <td>
+            <span class="input" editable-text="list.time" e-name="name" e-form="rowform">{{list.time | date:"HH:mm"}}</span>
           </td>
           <td>
             <form editable-form name="rowform" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == lists">
