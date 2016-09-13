@@ -1,13 +1,12 @@
 var gulp = require('gulp');
-var jshint = require('gulp-jshint');
-var jscs = require('gulp-jscs');
+var config = require('./gulp.config')();
+
+var $ = require('gulp-load-plugins')({lazy: true});
 
 gulp.task('vet', function() {
 	return gulp
-		.src([
-			'./src/**/*.js',
-			'/*.js' ])
-		.pipe(jshint())
-		.pipe(jscs())
-		.pipe(jshint.reporter('jshint-stylish', {verbose: true}));
+		.src(config.alljs)
+		.pipe($.jshint())
+		.pipe($.jscs())
+		.pipe($.jshint.reporter('jshint-stylish', {verbose: true}));
 });

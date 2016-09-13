@@ -9,6 +9,18 @@ body {
 .table {
 	width: 100%;
 }
+.form {
+	white-space: nowrap;
+}
+.name {
+	width: 50%;
+}
+.time {
+	width: 35%;
+}
+.action {
+	width: 15%;
+}
 .btn-lg {
 	width: 100%;
 }

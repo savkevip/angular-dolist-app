@@ -3,9 +3,9 @@
     <table class="table table-bordered table-hover table-condensed">
       <thead>
         <tr>
-          <th class="text-center">Duty</th>
-          <th class="text-center">Time</th>
-          <th class="text-center">Action</th>
+          <th class="text-center name">Duty</th>
+          <th class="text-center time">Time</th>
+          <th class="text-center action">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -16,7 +16,7 @@
           <td>
             <span class="input" editable-text="list.time" e-name="name" e-form="rowform">{{list.time | date:"HH:mm"}}</span>
           </td>
-          <td>
+          <td class="form">
             <form editable-form name="rowform" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == lists">
               <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">
                 Save
