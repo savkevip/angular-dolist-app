@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dolist" ng-controller="DolistCtrl as vm">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{vm.title}}</title>
+	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+	<link href="lib/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
+	<link rel="stylesheet" href="style/css/app.css">
+</head>
+<body >
+	<div class="container">
+		<h1 class="text-center">{{vm.title}}</h1>
+		<h3 class="text-center text-muted"><em>{{vm.subtitle}}</em></h3>
+
+		<default-table></default-table>
+		<add-stuff></add-stuff>
+
+
+	</div>
+
+
+	<script src="lib/angular/angular.min.js"></script>
+	<script src="lib/jquery/dist/jquery.min.js"></script>
+	
+	<script src="app.js"</script>
+
+
+	<script src="lib/lodash/dist/lodash.min.js"></script>
+
+	<script src="controller.js"></script>
+	<script src="directives/default-table.js"></script>
+	<script src="directives/add-stuff.js"></script>
+
+	<script src="lib/angular-xeditable/dist/js/xeditable.js"></script>
+	<script src="xeditable.js"></script>
+
+</body>
+</html>

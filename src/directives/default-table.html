@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-lg-12">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th class="text-center">Duty and Time</th>
+          <th class="text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="list in vm.lists">
+          <td >
+            <span editable-text="list.name" e-name="name" e-form="rowform" onbeforesave="vm.checkName($date)">{{list.name}}</span>
+            <span editable-text="list.time" e-name="name" e-form="rowform">{{list.time | date:"HH:mm"}}</span>
+          </td>
+          <td>
+            <form editable-form name="rowform" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == lists">
+              <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">
+                Save
+              </button>
+              <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel(); vm.remove($index)" class="btn btn-default">
+                Cancel
+              </button>
+            </form>          
+            <div ng-show="!rowform.$visible">
+              <button class="btn btn-default" ng-click="rowform.$show()">Edit</button>
+              <button class="btn btn-danger" ng-click="vm.remove($index)">Delete</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
